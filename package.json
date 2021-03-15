@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "graceful-fs": "^4.2.6",
     "moment": "^2.24.0",
     "native-base": "^2.12.1",
     "react": "^16.6.3",
