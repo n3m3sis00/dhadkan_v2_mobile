@@ -842,7 +842,7 @@ export default class LoginScreen extends Component {
                   }}
                 >
                   <Text style={{ textAlign: "center" }}>
-                    Version 1.1.6 | Updated on 15-March-2021
+                    Version 1.1.6 | Updated on 15-03-2021
                   </Text>
                 </View>
               </Modal>
