@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- define your colors Here -->
+  <color name="title_color">#c00000</color>
+  <color name="white">#fff</color>
+</resources>

@@ -1,0 +1,36 @@
+name: APK BUILD
+
+on:
+  push:
+    branches: [actions, production]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      #     - run: npm ci
+      #     - run: npm run build --if-present
+      #     - run: npm test
+      - run: npm install -g react-native-cli
+      - run: npm install
+      - run: npx jetify
+      - run: rm android/app/src/main/assets/index.android.bundle && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle
+      - run: cd android && ./gradlew clean
+      - run: cd android && rm -rf app/build && ./gradlew assembleRelease
+      - run: curl --http1.1 https://${{ secrets.APPITIZE_TOKEN }}@api.appetize.io/v1/apps/a06ktk4v5hm72k39hj8y84c5d8 -F "file=@android/app/build/outputs/apk/release/app-release.apk" -F "platform=android"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: Apk
+          path: android/app/build/outputs/apk/release

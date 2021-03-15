@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- node
+before_script:
+- npm install
+branches:
+  only:
+  - kittu
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: PKSY4c2QLBG6gjJE9G3blXOPjE18wYEp1Y9Rqc9Yum/c8mfjL9uUGX4/3UXAf3B2+IowcIQ6Lcfyh0pJmdSwx3orj7su54DHhNyCRxHDgU8UZ1P8VeOl9bzbtDajbiFP08ngdUBa3fxEFRPP/KhR2FQZZv7fbFaiojYTwufzT27zNvx1cwLPNgoqULh48yWHdyDnNhDmKKmMdhEIMIr3nU/x7sbH0YDGizdAtSEBrOUHW6SElYdqUJQ9OPDqsbQ5DOdSCbkJ9oCBYymxSqQZNYbAs+1v1AmEz/z0pC4zarMoavs1gIEyXZjOnjGUrqmabPr7WZCQfXdI9+yjtn5InzjQ1R5fiEAHWnRMe/aHJoHVVj9RBWA0vS5XQVrmWmYLSJoxgAyP62frYButs63Uzq9riS/kCujG5UBtONOKOWxcEA4KNE75PM+kdLdsHn2k1049nH9LjIQ2yXxm5wHiDgUSh0Zz3zha760Vg/grMWiLhpPH8ppx6r9Wh/gTXHkAdKHTf0rXKBBHk59xyBXpjhIMmTmJ8oL+e3Z/BxZrLVIbn7qEmCNHPLNvWgDc49D480DKxveRuARlVBk3pmFv8+iruSSU/wPYx7LgrN2KK64RPqSMTmBLpIQcibVpH3wjUU6JVlUFQvVEhB1Ctrg4YWqT8S3GTYjL5ot73qxogNo=
+#   app: labellabmobile
+#   on:
+#     branch: kittu
+#     repo: shreya2feb/labellab

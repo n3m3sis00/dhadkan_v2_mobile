@@ -1,0 +1,11 @@
+#setup android and java
+sudo apt-get install openjdk-8-jdk
+wget http://dl.google.com/android/android-sdk_r24.2-linux.tgz
+cd android-sdk-linux/tools
+./android update sdk --no-ui -a
+export PATH=${PATH}:$HOME/sdk/android-sdk-linux/platform-tools:$HOME/sdk/android-sdk-linux/tools:$HOME/sdk/android-sdk-linux/build-tools/22.0.1/
+
+# 
+npm install -g react-native-cli
+npm install
+react-native run-android
