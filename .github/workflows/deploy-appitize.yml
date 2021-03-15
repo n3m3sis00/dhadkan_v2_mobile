@@ -2,7 +2,7 @@ name: APK BUILD
 
 on:
   push:
-    branches: [actions, production]
+    branches: [master, production]
 
 jobs:
   build:
