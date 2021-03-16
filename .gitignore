@@ -41,7 +41,7 @@ yarn-error.log
 # BUCK
 buck-out/
 \.buckd/
-*.keystore
+# *.keystore
 
 # fastlane
 #
@@ -59,8 +59,8 @@ buck-out/
 
 ## Andorid build
 android/.gradle
-android/keystores
-android/gradle
+# android/keystores
+# android/gradle
 
 ## Andorid build
 android\.gradle\*
