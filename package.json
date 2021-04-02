@@ -8,6 +8,7 @@
     "android": "npx jetify && react-native run-android"
   },
   "dependencies": {
+    "Buffer": "0.0.0",
     "axios": "^0.18.0",
     "graceful-fs": "^4.2.6",
     "moment": "^2.24.0",
