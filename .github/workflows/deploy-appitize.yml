@@ -27,6 +27,7 @@ jobs:
       - run: rm android/app/src/main/assets/index.android.bundle && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle
       - run: cd android && ./gradlew clean
       - run: cd android && rm -rf app/build && ./gradlew assembleRelease
+      - run: echo ${{ secrets.APPITIZE_TOKEN }}
       - run: curl --http1.1 https://${{ secrets.APPITIZE_TOKEN }}@api.appetize.io/v1/apps/a06ktk4v5hm72k39hj8y84c5d8 -F "file=@android/app/build/outputs/apk/release/app-release.apk" -F "platform=android"
 
       - name: Upload Artifact
