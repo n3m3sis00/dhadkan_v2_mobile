@@ -39,12 +39,12 @@ import UserGuide from "./connector/UserGuide";
 import Bluetooth from "./connector/Bluetooth"
 
 const RootStack = createStackNavigator({
-  Bluetooth: {
-    screen: Bluetooth,
-    navigationOptions: {
-      title: "Connect",
-    },
-  },
+  // Bluetooth: {
+  //   screen: Bluetooth,
+  //   navigationOptions: {
+  //     title: "Connect",
+  //   },
+  // },
 
   LoginScreen: {
     screen: LoginScreen,
@@ -63,7 +63,7 @@ const RootStack = createStackNavigator({
   PatientsDetail: {
     screen: PatientsDetail,
     navigationOptions: {
-      title: "Details",
+      title: "Patient Info",
     },
   },
   RegisterDoctor: {
@@ -131,7 +131,7 @@ const RootStack = createStackNavigator({
   Ocr: {
     screen: Ocr,
     navigationOptions: {
-      title: "OCR",
+      title: "Drug Check [OCR]",
     },
   },
   UserGuide: {

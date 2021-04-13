@@ -369,13 +369,19 @@ export default class PatientHome extends Component {
               </Item>
             </Form>
           </View>
-          <TouchableOpacity style={{ marginTop: 30 }} onPress={this.handledata}>
+          
+          <TouchableOpacity style={{ marginTop: 10 }} onPress={this.handledata}>
             <View
               style={styles.button}
             >
               <Text style={styles.text}>SEND DATA</Text>
             </View>
           </TouchableOpacity>
+          <View style={{ alignSelf: "center", color: "#c00000" , padding:20}}>
+              <Text style={{ alignSelf: "center", color: "#c00000" , textAlign:"center"}}>
+                This data will be stored in cloud and also send to doctor.
+              </Text>
+            </View>
         </Content>
 
         <Modal isVisible={this.state.sending}>

@@ -8,7 +8,10 @@ import {
     Text
 } from 'react-native';
 
-import { BleManager, Service } from 'react-native-ble-plx';
+import { BleManager } from 'react-native-ble-plx';
+
+function btoa(data) { return Buffer.from(data, "binary").toString("base64"); }
+
 
 export default class App extends Component {
     constructor() {
@@ -142,20 +145,68 @@ export default class App extends Component {
     _read() {
         const characteristic = this.state.characteristic;
         console.log("shjkcgas", characteristic)
-        characteristic[0][0]
-        .read()
-        .then(res => {
-            console.log({ res }, '++++++++++++++++++++++++==');
-        })
-        .catch(err => {
-            console.log({ err }, '++++++++++++++++++++++++==');
-        });
+        // characteristic[0][0]
+        // .read()
+        // .then(res => {
+        //     console.log({ res }, '++++++++++++++++++++++++==');
+        //     console.log(res.descriptors)
+        // })
+        // .catch(err => {
+        //     console.log({ err }, '++++++++++++++++++++++++==');
+        // });
 
-        this.CONDEV.readCharacteristicForService("0000180d-0000-1000-8000-00805f9b34fb", "00002a39-0000-1000-8000-00805f9b34fb", "sdfs")
+        this.CONDEV.writeCharacteristicWithoutResponseForService('0000fee1-0000-1000-8000-00805f9b34fb','00000009-0000-3512-2118-0009af100700', btoa('\x01\x00')) // STEP 1 ------ we send \x01\x00, converted to base64
+        .catch((e)=>{
+            console.log(e);
+        })
+
+        this.CONDEV.readCharacteristicForService('0000fee1-0000-1000-8000-00805f9b34fb','00000009-0000-3512-2118-0009af100700') // STEP 1 ------ we send \x01\x00, converted to base64
         .then((data) => {
+            console.log("this data", data)
+        })
+        .catch((e)=>{
+            console.log(e);
+        })
+        
+
+        this.CONDEV.monitorCharacteristicForService('0000fee1-0000-1000-8000-00805f9b34fb', '00000009-0000-3512-2118-0009af100700', (error, characteristic) => { 
+            if(error){
+                console.log(error);                             
+            }
+            console.log("CHARAR", characteristic)
+        })
+
+        this.CONDEV.monitorCharacteristicForService("0000180d-0000-1000-8000-00805f9b34fb", "00002a37-0000-1000-8000-00805f9b34fb", (err, data) => {
+            if(err){
+                console.log("hr Err", err)
+            }
             console.log("data", data)
         })
-        .catch((error) => {console.log(error)})
+
+        // characteristic[6][0]
+        // .monitor((err, data) => {
+        //     if(err){
+        //         console.log("hr Err", err)
+        //     }
+        //     data.read().then((data) => {console.log("main data", data)}).catch((er) => {console.log(er)})
+        //     console.log("data", data)
+        //     // console.log("Des", data.descriptors)
+
+        //     // characteristic[6][0]
+        //     // .readDescriptor("00002902-0000-1000-8000-00805f9b34fb")
+        //     // .then((data) => {
+        //     //     console.log("data 2", data)
+        //     // })
+        // })
+        
+
+        
+
+        // this.CONDEV.readCharacteristicForService("00003802-0000-1000-8000-00805f9b34fb", "00004a02-0000-1000-8000-00805f9b34fb", "sdfs")
+        // .then((data) => {
+        //     console.log("data", data)
+        // })
+        // .catch((error) => {console.log(error)})
     }
 
     render() {
