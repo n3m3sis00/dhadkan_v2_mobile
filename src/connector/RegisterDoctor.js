@@ -97,10 +97,12 @@ export default class RegisterDoctor extends Component {
 
     const url_ = baseURL + "api/onboard/doc";
     console.warn(body);
+    console.log(url_)
     return fetch(url_, fetchData)
       .then((response) => response.json())
       .then((response) => {
         console.warn(response);
+        console.log("response", response)
 
         this.saveItem("username", this.state.mobile);
         this.saveItem("password", this.state.password);

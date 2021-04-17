@@ -26,6 +26,7 @@ import {
 import ImagePicker from "react-native-image-picker";
 import Modal from "react-native-modal";
 import { baseURL } from "../config";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const options = {
   maxHeight: 1000,
@@ -187,6 +188,11 @@ class UploadImage extends Component {
               <Icon name="paper-plane" />
               <Text>Send</Text>
             </Button>
+            <TouchableOpacity onPress={() => navigate("Ocr")}>
+              <View style={{ alignSelf: "center", color: "#c00000" , padding:30}}>
+                <Text style={{ alignSelf: "center", color: "#c00000" , textAlign:"center"}}>For automatically extract text from Image click here</Text>
+              </View>
+            </TouchableOpacity>
           </Content>
         </View>
       </Container>

@@ -227,6 +227,11 @@ class SendImage extends Component {
             <Text>Send</Text>
           </Button>
           </View>
+          <View style={{ alignSelf: "center", color: "#c00000" , padding:20}}>
+              <Text style={{ alignSelf: "center", color: "#c00000" , textAlign:"center"}}>
+                This image will be stored in cloud and also send to doctor.
+              </Text>
+            </View>
         </Content>
 
         <Modal isVisible={this.state.sending}>

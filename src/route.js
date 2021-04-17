@@ -36,8 +36,16 @@ import Ocr from "./connector/Ocr";
 import SendData2 from "./connector/SendData2";
 import Report from "./connector/Report";
 import UserGuide from "./connector/UserGuide";
+import Bluetooth from "./connector/Bluetooth"
 
 const RootStack = createStackNavigator({
+  // Bluetooth: {
+  //   screen: Bluetooth,
+  //   navigationOptions: {
+  //     title: "Connect",
+  //   },
+  // },
+
   LoginScreen: {
     screen: LoginScreen,
     navigationOptions: {
@@ -55,7 +63,7 @@ const RootStack = createStackNavigator({
   PatientsDetail: {
     screen: PatientsDetail,
     navigationOptions: {
-      title: "Details",
+      title: "Patient Info",
     },
   },
   RegisterDoctor: {
@@ -123,7 +131,7 @@ const RootStack = createStackNavigator({
   Ocr: {
     screen: Ocr,
     navigationOptions: {
-      title: "OCR",
+      title: "Drug Check [OCR]",
     },
   },
   UserGuide: {

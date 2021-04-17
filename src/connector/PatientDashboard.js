@@ -289,7 +289,7 @@ export default class PatientDashboard extends Component {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigate("Ocr")}>
+          {/* <TouchableOpacity onPress={() => navigate("Ocr")}>
             <View
               style={styles.button}
             >
@@ -300,7 +300,7 @@ export default class PatientDashboard extends Component {
               </View>
               <Text style={styles.text}>OCR</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity onPress={() => navigate("SendImg")}>
             <View
               style={styles.button}
