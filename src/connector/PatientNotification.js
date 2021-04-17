@@ -62,7 +62,7 @@ export default class PatientNotification extends Component {
       .then((response) => {
         var notification_ = [];
         console.warn(response.notifications[0]['isNOTBot'])
-        for (var i = 0; i < response.notifications.length - 1; ++i) {
+        for (var i = 0; i < response.notifications.length ; ++i) {
           notification_.push(
             <View style={styles.notificationcard}>
               {response.notifications[i]["isNOTBot"] ?
@@ -165,7 +165,7 @@ export default class PatientNotification extends Component {
       .then((response) => {
         var notification_ = [];
         console.warn(response.notifications[0])
-        for (var i = 0; i < response.notifications.length - 1; ++i) {
+        for (var i = 0; i < response.notifications.length ; ++i) {
           const id__ = response.notifications[i]["pk"];
           notification_.push(
               <View style={styles.notificationcard} >

@@ -63,7 +63,7 @@ export default class DoctorNotification extends Component {
       .then((response) => response.json())
       .then((response) => {
         var notification_ = [];
-        for (var i = 0; i < response.notifications.length - 1; ++i) {
+        for (var i = 0; i < response.notifications.length; ++i) {
           notification_.push(
             <View style={styles.notificationcard}>
               <Text style={styles.fontstyle}>
@@ -115,7 +115,7 @@ export default class DoctorNotification extends Component {
         .then((response) => response.json())
         .then((response) => {
           var notification_ = [];
-          for (var i = 0; i < response.notifications.length - 1; ++i) {
+          for (var i = 0; i < response.notifications.length; ++i) {
             notification_.push(
               <View style={styles.notificationcard}>
                 <Text style={styles.fontstyle}>
